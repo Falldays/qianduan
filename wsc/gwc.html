@@ -1,9 +1,123 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/public.css" />
+	<link rel="stylesheet" href="css/index.css"/>
+	<link rel="stylesheet" href="css/swiper3.07.min.css"/>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+	<script src="js/myfocus-2.0.1.min.js"></script>
+	<script src="js/main.js"></script>
+	
+	
+	<title>微商城 - 我的购物车</title>
+</head>
+
+<body>
+	
+<div class="top" id="item4">
+	<div class="container clearfix">
+		<ul class="clearfix fr">
+			<li><a href="#">这里是用户名XXX</a></li>
+			<li><a href="#">我的微商城</a></li>
+			<li><a href="#">我的订单</a></li>
+			<li><a href="#">收藏夹</a></li>
+			<li><a href="#">联系客服</a></li>
+			<li><a href="#" style="border: none">网站导航</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="header">
+	<div class="container clearfix">
+		<div class="logo fl" style="font-size: 30px;">
+			<a href="#"><img src="images/logo4.png" alt="" style="width: 200px;"/></a>
+			购物车
+		</div>
+		<div class="seacher fl">
+			<form action="" method="post">
+				<input type="text" placeholder="小伙伴，你想找什么?"/><input type="submit" value="搜 索"/>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	
+	
+	<div class="row clearfix">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-md-12 column">
+				<form action="${pageContext.request.contextPath }/downloadStudent.action" method="post">
+					<table class="table  table-hover">
+						<thead>
+							<tr>
+								<th></th>
+								<th>编号<th>
+								<th>商品封面<th>
+								<th>商品名</th>
+								<th>参数</th>
+								<th>单价</th>
+								<th>数量</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+						
+							<c:forEach var="student" items="${page.rows}" varStatus="status" >
+								<tr >
+									<td><input type="checkbox" name="userId" value="${}"></td>
+									<td >
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<c:out value="${}"/>
+									</td>
+									<td>
+										<a href="">编辑 </a><a href="">删除</a>
+									</td>
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+					<button type="submit" class="btn btn-warning">全  选</button>
+				</form>
+					<div class="col-md-12 text-right">
+						<button type="submit" class="btn btn-danger">结  算</button>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		</div>
+		
+	</div>
+
+
+</body>
+
 </html>
